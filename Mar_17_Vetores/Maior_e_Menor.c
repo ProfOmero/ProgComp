@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main() {
+  int n;            // tamanho do vetor
+  printf("Informe o tamanho do vetor: ");
+  scanf("%d", &n);
+
+  int x[n];         // declaração do vetor (alocação de memória)
+  int i;            // índice (ou posição) de um item no vetor
+
+  printf("\n");
+  for(i=0; i<n; i++) {
+    printf("%do. item de %d, x[%d] = ", (i+1), n, i);
+    scanf("%d", &x[i]);
+  }
+
+  int maior = x[0], menor = x[0];
+  for(i=1; i<n; i++) {
+    if (x[i] < menor)
+        menor = x[i];
+    else if (x[i] > maior)
+            maior = x[i];
+  }
+
+  printf("\n");
+  printf("x = { ");
+  for(i=0; i<n; i++) {
+    printf("%d", x[i]);
+    if (i != (n-1)) {
+        printf(", ");
+    }
+  }
+  printf(" }\n\n");
+
+  printf("Menor Valor = %d\n", menor);
+  printf("Maior Valor = %d\n", maior);
+
+  return(0);
+}
