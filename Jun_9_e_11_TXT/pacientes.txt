@@ -1,0 +1,10 @@
+Juca Bala
+90.500000; 1.770000
+Maria do Socorro
+62.000000; 1.620000
+Antônio das Dores
+80.000000; 1.760000
+Lucas Serafim
+80.500000; 1.700000
+Lurdes Maria
+60.200001; 1.650000
