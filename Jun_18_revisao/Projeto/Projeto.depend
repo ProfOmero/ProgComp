@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1781809705 source:c:\meus documentos\professor do daeln\aulas\progcomp\jun_18_revisao\projeto\opcoes.c
+
+1781809769 source:c:\meus documentos\professor do daeln\aulas\progcomp\jun_18_revisao\projeto\main.c
+	<stdio.h>
+	<stdlib.h>
+
