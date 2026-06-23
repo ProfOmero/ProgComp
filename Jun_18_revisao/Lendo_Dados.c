@@ -1,7 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int *carregar(FILE *arq, int *tam) {
+int *carregar(int *tam) {
+  FILE *arq;
+  arq = fopen("numeros.txt", "r");
+  if (arq == NULL) {
+     printf("Arquivo {numeros.txt} não foi localizado!!!\n");
+     return(0);
+  }
+
   int *result;
   int i = 0, nro;
 
@@ -13,6 +20,8 @@ int *carregar(FILE *arq, int *tam) {
     result[i] = nro;
     i++;
   }
+
+  fclose(arq);
 
   return(result);
 }
@@ -39,20 +48,12 @@ int mostrar(int *x, int tam) {
 }
 
 int main() {
-  FILE *arq;
-  arq = fopen("numeros.txt", "r");
-  if (arq == NULL) {
-     printf("Arquivo {numeros.txt} não foi localizado!!!\n");
-     return(0);
-  }
-
   int *a, n;
 
-  a = carregar(arq, &n);
+  a = carregar(&n);
 
   mostrar(a, n);
 
-  fclose(arq);
   printf("<<< FIM DO PROGRAMA >>>\n");
 
   return(0);
