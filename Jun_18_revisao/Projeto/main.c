@@ -4,33 +4,43 @@
 
 int main() {
   int opcao;
+  int *a, tam = 0;
+
+  a = carregar(&tam);
 
   do {
     system("cls");
 
-    printf("********* MENU PRINCIPAL *********\n");
-    printf("[ 1 ] Chama a Opção 1\n");
-    printf("[ 2 ] Chama a Opção 2\n");
-    printf("[ 3 ] Chama a Opção 3\n");
-    printf("[ 4 ] Chama a Opção 4\n");
+    printf("****************** MENU PRINCIPAL *******************\n");
+    printf("[ 1 ] Cadastrar Números\n");
+    printf("[ 2 ] Mostrar Números\n");
+    printf("[ 3 ] Mostrar o Menor e o Maior Números\n");
+    printf("[ 4 ] Mostrar o Somatório e o Valor Médio dos Números\n");
+    printf("[ 5 ] Mostrar o Percentual de Pares e Ímpares\n");
     printf("\n");
     printf("[ 0 ] Encerrar\n");
-    printf("**********************************\n");
+    printf("*****************************************************\n");
 
     do {
       printf("Opção Desejada? ");
       scanf("%d", &opcao);
-    } while ((opcao < 0) || (opcao > 4));
+    } while ((opcao < 0) || (opcao > 5));
 
     printf("\n");
-    if (opcao == 1)
-       opcao_1();
-    else if (opcao == 2)
-       opcao_2();
+    if (opcao == 1) {
+       cadastrar();
+       a = carregar(&tam);
+    }
+    else if (opcao == 2) {
+       mostrar(a, tam);
+       system("pause");
+    }
     else if (opcao == 3)
-       opcao_3();
+       menor_maior(a, tam);
     else if (opcao == 4)
-       opcao_4();
+       somatorio_media(a, tam);
+    else if (opcao == 5)
+       percentual(a, tam);
 
   } while (opcao != 0);
 

@@ -1,6 +1,13 @@
 #include <stdio.h>
 
-void gravar(FILE *arq) {
+void gravar() {
+  FILE *arq;
+  arq = fopen("numeros.txt", "w");
+  if (arq == NULL) {
+     printf("Arquivo {numeros.txt} não foi criado!!!\n");
+     return(0);
+  }
+
   int i, n, nro;
 
   printf("Quantos nros serão gravados? ");
@@ -15,19 +22,12 @@ void gravar(FILE *arq) {
 
     fprintf(arq, "%d\n", nro);
   }
+
+  fclose(arq);
 }
 
 int main() {
-  FILE *arq;
-  arq = fopen("numeros.txt", "w");
-  if (arq == NULL) {
-     printf("Arquivo {numeros.txt} não foi criado!!!\n");
-     return(0);
-  }
-
-  gravar(arq);
-
-  fclose(arq);
+  gravar();
   printf("<<< FIM DO PROGRAMA >>>\n");
 
   return(0);
